@@ -4,6 +4,9 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
         setKeyListeners();
         log("Activity created");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(1, 1, 1, "").setTitle("Clean log");
+        return (super.onCreateOptionsMenu(menu));
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case 1:
+                logger.setText("");
+                return true;
+        }
+        return false;
     }
 
     private void setKeyListeners() {
