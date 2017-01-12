@@ -102,6 +102,7 @@
         android:focusable="false"
         android:text=""
         android:id="@+id/logger"
+        android:textAppearance="@android:style/TextAppearance.Small"
         android:layout_weight="0.30" />
 
 </LinearLayout>
