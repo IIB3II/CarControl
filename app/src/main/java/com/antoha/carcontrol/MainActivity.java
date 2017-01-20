@@ -109,7 +109,8 @@ public class MainActivity extends AppCompatActivity {
                     int port = Integer.parseInt(etPort.getText().toString());
                     Socket socket = new Socket(ip, port);
                     DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
-                    dos.writeUTF(msg);
+                    //dos.writeUTF(msg);
+                    dos.write(msg.getBytes());
                     dos.flush();
                     dos.close();
                     socket.close();
